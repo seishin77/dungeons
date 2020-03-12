@@ -2,5 +2,13 @@
 
 A character (Player Character (PC) or Non Player Character (NPC)) has as attributes :
 - a `strength`
-  his `strength` defines the transportable weight : `maxWeight = 5 * strength`
-  
+  his `strength` defines the transportable weight : `maxWeight = 5 * strength` and a physical damage modifier : `physicalDamageMod = floor((strength - 10) / 2)`
+  if the character is carrying more than he can, he suffers a penalty to his skills equal to `penalty = 5 * floor((weight - maxWeight) / 10)`
+- a `constitution`
+  his `constitution` defines his hit points : `hp = 2 * constitution`
+- a `dexterity`
+  his `dexterity` defines an attack modifier : `attackMod = floor((dexterity - 10) / 2)`
+- an `intelligence` defines a magical damage modifier : `magicalDamageMod = floor((intelligence - 10) / 2)`
+- a `wisdom` defines his mana points : `mana = 2 * wisdom`
+- a `charisma` defines a social modifier to buy/sell items : `socialMod = 2 * floor((charisma - 10) / 2)`
+  The social modifier gives a reduction on purchase and a better price on sale.
