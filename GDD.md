@@ -30,6 +30,8 @@ List of skills :
   - `crossbow`
   - `axe`
   - `mace`
+  - `flail`
+  - `hammer`
 - `magic`
 - `bargain`
 - `repair`
@@ -39,3 +41,19 @@ List of skills :
 - `enchant`
 
 ## Items
+
+ Code          | Name         | Type       | Family       | Details 
+---------------|--------------|------------|--------------|---------------------------------------------
+ `shortsword`  | Short Sword  | `weapon`   | `shortBlade` | `{"damage":[1,6,10],"range":0,"weight":1}`
+ `longsword`   | Long Sword   | `weapon`   | `longBlade`  | `{"damage":[1,8,10],"range":0,"weight":2}`
+ `shortbow`    | Short Bow    | `weapon`   | `bow`        | `{"damage":[1,6,5],"range":5,"weight":1}`
+ `longbow`     | Long Bow     | `weapon`   | `bow`        | `{"damage":[1,6,5],"range":8,"weight":1.5}`
+ `dagger`      | Dagger       | `weapon`   | `dagger`     | `{"damage":[1,4,10],"range":0,"weight":0.5}`
+ `lightflail`  | Light Flail  | `weapon`   | `flail`      | `{"damage":[1,8,5],"range":0,"weight":2}`
+ `lightMace`   | Light Mace   | `weapon`   | `mace`       | `{"damage":[1,6,5],"range":0,"weight":2}`
+ `lightHammer` | Light Hammer | `weapon`   | `hammer`     | `{"damage":[1,4,15],"range":0,"weight":2}`
+ `` |  | `weapon`   | `` | `{"damage":[1,6,5],"range":0,"weight":1}`
+
+
+
+
