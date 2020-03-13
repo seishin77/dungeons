@@ -44,17 +44,14 @@ List of skills :
 
  Code           | Name            | Type       | Family     | Details                                                                                    | Droppable | Buyable | Script  
 ----------------|-----------------|------------|------------|--------------------------------------------------------------------------------------------|-----------|---------|--------
-`shortsword`    | Short Sword     | `weapon`   | `shortBlad | `{"damage":[1,6],"critical":10,"physicalrange":1,"distancerange":0,"weight":1}`            | t         | t       | ""    
-`longsword`     | Long Sword      | `weapon`   | `longBlade | `{"damage":[1,8],"critical":10,"physicalrange":1,"distancerange":0,"weight":2}`            | t         | t       | ""    
-`shortbow`      | Short Bow       | `weapon`   | `bow`      | `{"damage":[1,6],"critical":5,"physicalrange":-1,"distancerange":12,"weight":1}`           | t         | t       | ""    
-`longbow`       | Long Bow        | `weapon`   | `bow`      | `{"damage":[1,6],"critical":5,"physicalrange":-1,"distancerange":20,"weight":1.5}`         | t         | t       | ""    
-`dagger`        | Dagger          | `weapon`   | `dagger`   | `{"damage":[1,4],"critical":10,"physicalrange":1,"distancerange":2,"weight":0.5}`          | t         | t       | ""    
-`lightflail`    | Light Flail     | `weapon`   | `flail`    | `{"damage":[1,8],"critical":5,"physicalrange":1,"distancerange":0,"weight":2}`             | t         | t       | ""    
-`lightMace`     | Light Mace      | `weapon`   | `mace`     | `{"damage":[1,6],"critical":5,"physicalrange":1,"distancerange":0,"weight":2}`             | t         | t       | ""    
-`lightHammer`   | Light Hammer    | `weapon`   | `hammer`   | `{"damage":[1,4],"critical":15,"physicalrange":1,"distancerange":0,"weight":2}`            | t         | t       | ""    
-`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow` | `{"damage":[1,8],"critical":10,"physicalrange":-1,"distancerange":16,"weight":1.5}`        | t         | t       | ""    
-`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`      | `{"damage":[1,6],"critical":15,"physicalrange":-1,"distancerange":16,"weight":1.5}`        | t         | t       | ""    
-
-
-## Merchants
-
+`shortsword`    | Short Sword     | `weapon`   | `shortBlad | `{"damage":[1,6],"critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1}`  | t         | t       | ""
+`longsword`     | Long Sword      | `weapon`   | `longBlade | `{"damage":[1,8],"critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`  | t         | t       | ""
+`shortbow`      | Short Bow       | `weapon`   | `bow`      | `{"damage":[1,6],"critical":5,"physicalrange":[-1,-1],"distancerange":[2,12],"weight":1}`  | t         | t       | ""
+`longbow`       | Long Bow        | `weapon`   | `bow`      | `{"damage":[1,6],"critical":5,"physicalrange":[-1,-1],"distancerange":[2,20],"weight":1.5} | t         | t       | ""
+`dagger`        | Dagger          | `weapon`   | `dagger`   | `{"damage":[1,4],"critical":10,"physicalrange":[0,1],"distancerange":[2,3],"weight":0.5}`  | t         | t       | ""
+`lightflail`    | Light Flail     | `weapon`   | `flail`    | `{"damage":[1,8],"critical":5,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`   | t         | t       | ""
+`lightMace`     | Light Mace      | `weapon`   | `mace`     | `{"damage":[1,6],"critical":5,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`   | t         | t       | ""
+`lightHammer`   | Light Hammer    | `weapon`   | `hammer`   | `{"damage":[1,4],"critical":15,"physicalrange":[0,1],"distancerange":[-1,-1],"weight":2}`  | t         | t       | ""
+`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow` | `{"damage":[1,8],"critical":10,"physicalrange":[-1,-1],"distancerange":[16,16],"weight":1. | t         | t       | ""
+`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`      | `{"damage":[1,6],"critical":15,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1.5} | t         | t       | ""
+`halberd`       | Halberd         | `weapon`   | `hast`     | `{"damage":[1,10],"critical":15,"physicalrange":[1,2],"distancerange":[-1,-1],"weight":6}` | t         | t       | ""
