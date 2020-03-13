@@ -54,3 +54,7 @@ List of skills :
 `lightHammer`   | Light Hammer    | `weapon`   | `hammer`   | `{"damage":[1,4],"critical":15,"physicalrange":1,"distancerange":0,"weight":2}`            | t         | t       | ""    
 `lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow` | `{"damage":[1,8],"critical":10,"physicalrange":-1,"distancerange":16,"weight":1.5}`        | t         | t       | ""    
 `boardingaxe`   | Boarding Axe    | `weapon`   | `axe`      | `{"damage":[1,6],"critical":15,"physicalrange":-1,"distancerange":16,"weight":1.5}`        | t         | t       | ""    
+
+
+## Merchants
+
