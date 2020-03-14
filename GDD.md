@@ -6,6 +6,7 @@ A character (Player Character (PC) or Non Player Character (NPC)) has as attribu
 - a `strength`
 
   his `strength` defines the transportable weight : `maxWeight = 5 * strength` and a physical damage modifier : `physicalDamageMod = floor((strength - 10) / 2)`
+  
   if the character is carrying more than he can, he suffers a penalty to his skills equal to `penalty = 5 * floor((weight - maxWeight) / 10)`
 - a `constitution`
 
@@ -26,7 +27,9 @@ A character (Player Character (PC) or Non Player Character (NPC)) has as attribu
 Each character has one or more skills. He masters each skill at a certain percentage which can be modified according to the action.
 
 The system rolls 1d100. If the result is under the percentage modified by the action and by the attribute modifier, the action is a success else it's a fail.
+
 If the result is below one tenth of the modified percentage (max 10), it is a critical success.
+
 If the result is above 90 plus one tenth of the modified percentage (max 99), it is a critical failure.
 
 ### Opposed Skill Checks
