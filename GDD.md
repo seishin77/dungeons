@@ -67,19 +67,19 @@ In case of equality, the winner is the active character.
 
 ## Items
 
- Code           | Name            | Type       | Family     | Details                                                                                                        | Droppable | Buyable | Script  
-----------------|-----------------|------------|------------|----------------------------------------------------------------------------------------------------------------|-----------|---------|--------
-`shortsword`    | Short Sword     | `weapon`   | `shortBlad | `{"atk":0, "damage":[1,6], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":1}`            | t         | t       | ""
-`longsword`     | Long Sword      | `weapon`   | `longBlade | `{"atk":-5,"damage":[1,8], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
-`shortbow`      | Short Bow       | `weapon`   | `bow`      | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,12],"weight":1}`           | t         | t       | ""
-`longbow`       | Long Bow        | `weapon`   | `bow`      | `{"atk":-5,"damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,20],"weight":1.5}`         | t         | t       | ""
-`dagger`        | Dagger          | `weapon`   | `dagger`   | `{"atk":0, "damage":[1,4], "critical":8, "physicalrange":[0,1],"distancerange":[2,3],"weight":0.5}`            | t         | t       | ""
-`lightflail`    | Light Flail     | `weapon`   | `flail`    | `{"atk":-5,"damage":[1,8], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
-`lightMace`     | Light Mace      | `weapon`   | `mace`     | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
-`lightHammer`   | Light Hammer    | `weapon`   | `hammer`   | `{"atk":0, "damage":[1,4], "critical":10,"physicalrange":[0,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
-`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow` | `{"atk":0, "damage":[1,8], "critical":8, "physicalrange":[-1,-1],"distancerange":[16,16],"weight":1.5}`        | t         | t       | ""
-`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`      | `{"atk":0, "damage":[1,6], "critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1.5}`          | t         | t       | ""
-`halberd`       | Halberd         | `weapon`   | `hast`     | `{"atk":-5,"damage":[1,10],"critical":10,"physicalrange":[1,2],"distancerange":[-1,-1],"weight":6}`            | t         | t       | ""
+ Code           | Name            | Type       | Family          | Details                                                                                                        | Droppable | Buyable | Script  
+----------------|-----------------|------------|-----------------|----------------------------------------------------------------------------------------------------------------|-----------|---------|--------
+`shortsword`    | Short Sword     | `weapon`   | `shortBlade`    | `{"atk":0, "damage":[1,6], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":1}`            | t         | t       | ""    
+`longsword`     | Long Sword      | `weapon`   | `longBlade`     | `{"atk":-5,"damage":[1,8], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
+`shortbow`      | Short Bow       | `weapon`   | `bow`           | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,12],"weight":1}`           | t         | t       | ""    
+`longbow`       | Long Bow        | `weapon`   | `bow`           | `{"atk":-5,"damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,20],"weight":1.5}`         | t         | t       | ""    
+`dagger`        | Dagger          | `weapon`   | `dagger`        | `{"atk":0, "damage":[1,4], "critical":8, "physicalrange":[0,1],"distancerange":[2,3],"weight":0.5}`            | t         | t       | ""    
+`lightflail`    | Light Flail     | `weapon`   | `flail`         | `{"atk":-5,"damage":[1,8], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
+`lightMace`     | Light Mace      | `weapon`   | `mace`          | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
+`lightHammer`   | Light Hammer    | `weapon`   | `hammer`        | `{"atk":0, "damage":[1,4], "critical":10,"physicalrange":[0,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
+`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow`      | `{"atk":0, "damage":[1,8], "critical":8, "physicalrange":[-1,-1],"distancerange":[16,16],"weight":1.5}`        | t         | t       | ""    
+`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`           | `{"atk":0, "damage":[1,6], "critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1.5}`          | t         | t       | ""    
+`halberd`       | Halberd         | `weapon`   | `hast`          | `{"atk":-5,"damage":[1,10],"critical":10,"physicalrange":[1,2],"distancerange":[-1,-1],"weight":6}`            | t         | t       | ""    
 
 ## Merchants
 
