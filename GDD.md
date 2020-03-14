@@ -17,7 +17,7 @@ A character (Player Character (PC) or Non Player Character (NPC)) has as attribu
 - a `wisdom` defines his mana points : `mana = mulMana * wisdom`
 - a `charisma` defines a social modifier to buy/sell items : `socialMod = 2 * floor((charisma - 10) / 2)`
 
-  The social modifier gives a reduction on purchase and a better price on sale.
+  The social modifier gives a reduction (or increase) on purchase and a cheaper (or expensive) price on sale.
 
 ## Skills
 
@@ -25,7 +25,7 @@ A character (Player Character (PC) or Non Player Character (NPC)) has as attribu
 
 Each character has one or more skills. He masters each skill at a certain percentage which can be modified according to the action.
 
-The system rolls 1d100. If the result is under the percentage modified by the action, the action is a success else it's a fail.
+The system rolls 1d100. If the result is under the percentage modified by the action and by the attribute modifier, the action is a success else it's a fail.
 If the result is below one tenth of the modified percentage (max 10), it is a critical success.
 If the result is above 90 plus one tenth of the modified percentage (max 99), it is a critical failure.
 
@@ -67,20 +67,20 @@ In case of equality, the winner is the active character.
 
 ## Items
 
- Code           | Name            | Type       | Family     | Details                                                                                    | Droppable | Buyable | Script  
-----------------|-----------------|------------|------------|--------------------------------------------------------------------------------------------|-----------|---------|--------
-`shortsword`    | Short Sword     | `weapon`   | `shortBlad | `{"atk":0,"damage":[1,6],"critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weig | t         | t       | ""    
-`longsword`     | Long Sword      | `weapon`   | `longBlade | `{"atk":-5,"damage":[1,8],"critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"wei | t         | t       | ""    
-`shortbow`      | Short Bow       | `weapon`   | `bow`      | `{"atk":0,"damage":[1,6],"critical":5,"physicalrange":[-1,-1],"distancerange":[2,12],"weig | t         | t       | ""    
-`longbow`       | Long Bow        | `weapon`   | `bow`      | `{"atk":-5,"damage":[1,6],"critical":5,"physicalrange":[-1,-1],"distancerange":[2,20],"wei | t         | t       | ""    
-`dagger`        | Dagger          | `weapon`   | `dagger`   | `{"atk":0,"damage":[1,4],"critical":10,"physicalrange":[0,1],"distancerange":[2,3],"weight | t         | t       | ""    
-`lightflail`    | Light Flail     | `weapon`   | `flail`    | `{"atk":-5,"damage":[1,8],"critical":5,"physicalrange":[1,1],"distancerange":[-1,-1],"weig | t         | t       | ""    
-`lightMace`     | Light Mace      | `weapon`   | `mace`     | `{"atk":0,"damage":[1,6],"critical":5,"physicalrange":[1,1],"distancerange":[-1,-1],"weigh | t         | t       | ""    
-`lightHammer`   | Light Hammer    | `weapon`   | `hammer`   | `{"atk":0,"damage":[1,4],"critical":15,"physicalrange":[0,1],"distancerange":[-1,-1],"weig | t         | t       | ""    
-`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow` | `{"atk":0,"damage":[1,8],"critical":10,"physicalrange":[-1,-1],"distancerange":[16,16],"we | t         | t       | ""    
-`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`      | `{"atk":0,"damage":[1,6],"critical":15,"physicalrange":[1,1],"distancerange":[-1,-1],"weig | t         | t       | ""    
-`halberd`       | Halberd         | `weapon`   | `hast`     | `{"atk":-5,"damage":[1,10],"critical":15,"physicalrange":[1,2],"distancerange":[-1,-1],"we | t         | t       | ""    
+ Code           | Name            | Type       | Family     | Details                                                                                                        | Droppable | Buyable | Script  
+----------------|-----------------|------------|------------|----------------------------------------------------------------------------------------------------------------|-----------|---------|--------
+`shortsword`    | Short Sword     | `weapon`   | `shortBlad | `{"atk":0, "damage":[1,6], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":1}`            | t         | t       | ""
+`longsword`     | Long Sword      | `weapon`   | `longBlade | `{"atk":-5,"damage":[1,8], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`shortbow`      | Short Bow       | `weapon`   | `bow`      | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,12],"weight":1}`           | t         | t       | ""
+`longbow`       | Long Bow        | `weapon`   | `bow`      | `{"atk":-5,"damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,20],"weight":1.5}`         | t         | t       | ""
+`dagger`        | Dagger          | `weapon`   | `dagger`   | `{"atk":0, "damage":[1,4], "critical":8, "physicalrange":[0,1],"distancerange":[2,3],"weight":0.5}`            | t         | t       | ""
+`lightflail`    | Light Flail     | `weapon`   | `flail`    | `{"atk":-5,"damage":[1,8], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`lightMace`     | Light Mace      | `weapon`   | `mace`     | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`lightHammer`   | Light Hammer    | `weapon`   | `hammer`   | `{"atk":0, "damage":[1,4], "critical":10,"physicalrange":[0,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow` | `{"atk":0, "damage":[1,8], "critical":8, "physicalrange":[-1,-1],"distancerange":[16,16],"weight":1.5}`        | t         | t       | ""
+`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`      | `{"atk":0, "damage":[1,6], "critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1.5}`          | t         | t       | ""
+`halberd`       | Halberd         | `weapon`   | `hast`     | `{"atk":-5,"damage":[1,10],"critical":10,"physicalrange":[1,2],"distancerange":[-1,-1],"weight":6}`            | t         | t       | ""
 
 ## Merchants
 
-The merchants has a charisma, some gold pieces and only one skill : bargain.
+The merchants has a charisma, some gold pieces, some equipments and only one skill : bargain.
