@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * Note : this derivating class breaks the multi-db functionality of PDO by some methods :
+ *
+ * static public function tableExists($name, $schema='public');
+ * static public function curVal($seq);
+ * static public function nextVal($seq);
+ * static public function setVal($seq, $val, $called=true);
+ * static public function futureVal($seq);
+ */
+
 namespace PGF;
 
 use PDO;
@@ -165,14 +175,13 @@ class Db{
 
     static::query(sprintf('SELECT last_value, is_called FROM %s;', $seq));
     $r = static::fetch();
-    addFlash(var_export($r, true),'warning');
+
     if(!$r['is_called'])
       return $r['last_value'] - 1;
     return $r['last_value'];
   }
 
   static public function nextVal($seq){
-    addFlash('nextVal '. $seq, 'warning');
     if(is_null(static::$db))
       static::init();
     static::query(sprintf('SELECT nextval(%s) as val;', "'" . $seq . "'"));
