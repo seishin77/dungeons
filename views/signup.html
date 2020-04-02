@@ -1,0 +1,56 @@
+<div class="w3-card-4 w3-display-middle c2 w35p">
+  <form id="signupformId" name="signupform" class="w3-container" novalidate ng-submit="submit()">
+    <h1>Sign up</h1>
+    <p>
+      <label for="loginId">Login</label>
+      <input class="w3-input w3-border" type="text" id="loginId" name="login" ng-model="login"
+        placeholder="Login" ng-minlength="3" ng-maxlength="255" required/>
+      <span style="color:red" ng-show="signupform.login.$dirty && signupform.login.$invalid">
+        <span ng-show="signupform.login.$error.required">Login is required</span>
+        <span ng-show="signupform.login.$error.minlength||signupform.login.$error.minlength">
+          Login must have at least 3 characters and at most 255 characters
+        </span>
+      </span>
+      &nbsp;
+    </p>
+    <p>
+      <label for="emailId">Email</label>
+      <input class="w3-input w3-border" type="email" id="emailId" name="email" check-email ng-model="email"
+        placeholder="Email" required/>
+      <span style="color:red" ng-show="signupform.email.$dirty && signupform.email.$invalid">
+        <span ng-show="signupform.email.$error.required">Email is required</span>
+        <span ng-show="signupform.email.$error.email">Invalid email address</span>
+      </span>
+      &nbsp;
+    </p>
+    <p>
+      <label for="passwordId">Password</label>
+      <input class="w3-input w3-border" type="password" id="passwordId" name="password" ng-model="password"
+        placeholder="Password" required/>
+      <span style="color:red" ng-show="signupform.password.$dirty && signupform.password.$invalid">
+        <span ng-show="signupform.password.$error.required">Password is required</span>
+        <span ng-show="signupform.password.$error.$invalid">Invalid password</span>
+      </span>
+      &nbsp;
+    </p>
+    <p>
+      <label for="password2Id">Password confirmation</label>
+      <input class="w3-input w3-border" type="password" id="password2Id" name="password2" ng-model="password2"
+        ui-validate="'$value==password'" ui-validate-watch="'password'" placeholder="Password confirmation" required />
+      <span style="color:red" ng-show="signupform.password2.$dirty||signupform.password2.$invalid||signupform.password.$viewValue!=signupform.password2.$viewValue">
+        <span ng-show="signupform.password.$viewValue != signupform.password2.$viewValue">Passwords are different</span>
+      </span>
+      &nbsp;
+    </p>
+    <p>
+      <button class="w3-button w3-block w3-card c7"
+        ng-disabled=
+          "signupform.login.$pristine||signupform.login.$invalid||signupform.password.$pristine||signupform.password.$invalid||signupform.email.$pristine||signupform.email.$invalid||signupform.password2.$pristine||signupform.password2.$invalid||signupform.password.$viewValue != signupform.password2.$viewValue">
+        Sign up
+      </button>
+    </p>
+    <p class="w3-center">
+      <a class="w3-button w3-block w3-card c6" href="#!/">Sign in</a>
+    </p>
+  </form>
+</div>

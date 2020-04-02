@@ -1,0 +1,25 @@
+<div ng-controller="objectList" ng-if="size > 0">
+  <h1>{{title}} - {{size}} </h1>
+  <table class="w3-table-all w3-card-4">
+    <thead>
+      <tr>
+        <th ng-repeat="(kk, y) in content[0]">{{kk | capitalize}}</th>
+      </tr>
+    </thead>
+    <tr ng-repeat="(k,x) in content">
+      <td ng-repeat="(kk, y) in x">{{y}}</td>
+    </tr>
+  </table>
+  <div class="w3-card-4 w3-center w3-display-bottommiddle c2 w100p">
+    Valid until {{until | ts2date}}
+  </div>
+</div>
+<div ng-controller="objectList" ng-if="size == 0">
+  <h1>{{title}} - {{size}}</h1>
+  <div class="w3-card-4 w3-display-middle c2">
+    <p>No Object</p>
+  </div>
+  <div class="w3-card-4 w3-center w3-display-bottommiddle c2 w100p">
+    Valid until {{until | ts2date}}
+  </div>
+</div>

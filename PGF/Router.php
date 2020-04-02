@@ -3,12 +3,14 @@
 namespace PGF;
 
 class Router{
-  static private $_baseDir='';
-  static private $_params = array();
-  static private $_url = '';
+  static private $_baseDir    = '';
+  static private $_params     = array();
+  static private $_url        = '';
   static private $_defaultUrl = '';
-  static private $_verb = '';
-  static private $_query = '';
+  static private $_verb       = '';
+  static private $_query      = '';
+  static private $_controller = '';
+  static private $_action     = '';
 
   static public function isInitiated(){
     return static::$_baseDir != '';
@@ -29,17 +31,39 @@ class Router{
 
     static::$_verb = $_SERVER['REQUEST_METHOD'];
     static::$_query = $_SERVER['QUERY_STRING'];
+
+    $tabs = explode('/', static::$_url);
+    static::$_controller = "\\controllers\\" . $tabs[1] . 'Controller';
+    static::$_action = strtolower(static::$_verb) . ucfirst($tabs[2]) . 'Action';
+  }
+
+  static public function getController(){
+    return static::$_controller;
+  }
+
+  static public function getAction(){
+    return static::$_action;
+  }
+
+  static public function redirect($url=''){
+    if($url == '')
+      $url = static::$_baseDir . static::$_defaultUrl;
+    else
+      if(strpos($url, static::$_baseDir) !== 0)
+        $url = static::$_baseDir . static::$_defaultUrl;
+
+    header('Location: ' . $url);
+    exit;
   }
 
   static public function route(){
     if(!static::isInitiated())
       die(ucfirst(_('router isn\'t initialized...')));
 
-    $tabs = explode('/', static::$_url);
-    $ctrl = "\\controllers\\" . $tabs[1] . 'Controller';
-    $action = strtolower(static::$_verb) . ucfirst($tabs[2]) . 'Action';
-
     // error_log(sprintf('[%s::%s] ? %s %s %s %s %s',$ctrl, $action, static::$_verb, $tabs[1], $tabs[2], static::$_url, static::$_baseDir));
+    $ctrl = static::getController();
+    $action = static::getAction();
+
     if(class_exists($ctrl)){
       if(method_exists($ctrl, $action)){
         $class = new $ctrl();

@@ -17,6 +17,6 @@ class objectsController extends \PGF\Controller{
       $objects[] = $row;
     }
 
-    return $this->ok(array('title' => 'List of objects', 'list' => $objects));
+    return static::ok(array('title' => 'List of objects', 'list' => $objects, 'until' => strtotime('+60 min'), ));
   }
 }

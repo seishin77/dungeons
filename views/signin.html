@@ -1,0 +1,38 @@
+<div class="w3-card-4 w3-display-middle c2 w35p">
+  <form id="signinformId" name="signinform" class="w3-container" novalidate ng-submit="submit()">
+    <h1>Sign in</h1>
+    <div ng-show="error" class="w3-panel w3-border w3-border-red w3-round w3-red w3-center">{{error|capitalize}}</div>
+    <div ng-hide="error" class="w3-panel ">&nbsp;</div>
+    <p>
+      <label for="loginId">Login</label>
+      <input class="w3-input w3-border" type="text" id="loginId" name="login" ng-model="login"
+        placeholder="Login" ng-minlength="3" ng-maxlength="255" required/>
+      <span style="color:red" ng-show="signupform.login.$dirty && signupform.login.$invalid">
+        <span ng-show="signupform.login.$error.required">Login is required</span>
+        <span ng-show="signupform.login.$error.minlength||signupform.login.$error.minlength">
+          Login must have at least 3 characters and at most 255 characters
+        </span>
+      </span>
+      &nbsp;
+    </p>
+    <p>
+      <label for="passwordId">Password</label>
+      <input class="w3-input w3-border" type="password" id="passwordId" name="password" ng-model="password"
+        placeholder="Password" required/>
+      <span style="color:red" ng-show="signupform.password.$dirty && signupform.password.$invalid">
+        <span ng-show="signupform.password.$error.required">Password is required</span>
+        <span ng-show="signupform.password.$error.$invalid">Invalid password</span>
+      </span>
+      &nbsp;
+    </p>
+    <p>
+      <button class="w3-button w3-block w3-card c7"
+        ng-disabled="signinform.login.$pristine||signinform.login.$invalid||signinform.password.$pristine||signinform.password.$invalid">
+        Sign in
+      </button>
+    </p>
+    <p class="w3-center">
+      <a class="w3-button w3-block w3-card c6" href="#!/auth/signup">Sign up</a>
+    </p>
+  </form>
+</div>
