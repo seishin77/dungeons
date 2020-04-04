@@ -1,4 +1,4 @@
-<div ng-controller="objectList" ng-if="size > 0">
+<div ng-controller="objectsList" ng-if="size > 0">
   <h1>{{title}} - {{size}} </h1>
   <table class="w3-table-all w3-card-4">
     <thead>
@@ -14,7 +14,7 @@
     Valid until {{until | ts2date}}
   </div>
 </div>
-<div ng-controller="objectList" ng-if="size == 0">
+<div ng-controller="objectsList" ng-if="size == 0">
   <h1>{{title}} - {{size}}</h1>
   <div class="w3-card-4 w3-display-middle c2">
     <p>No Object</p>

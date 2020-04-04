@@ -5,7 +5,9 @@ html, body{ height: 100%; }
 .w35p{ width: 35%; }
 #menubar{ position: absolute; z-index: 99999; }
 
-body div.h100p{ padding: 2.2rem 1.5rem 0; }
+.active { color: black; font-weight: bolder; }
+
+body div.h100p{ padding: 2.6rem 1.5rem 0; }
 
 .c1,  .w3-theme-l5 {color:#000 !important; background-color:#fbfaf8 !important}
 .c2,  .w3-theme-l4 {color:#000 !important; background-color:#f2eee8 !important}

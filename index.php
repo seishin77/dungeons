@@ -12,19 +12,19 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
   <script src="js/angular/validate.js"></script>
 </head>
-<body class="w3-display-container c6">
+<body class="w3-display-container c6" ng-app="dungeons">
   <header id="menubar" class="w3-bar w3-display-top w3-display-container c11">
-    <a class="w3-bar-item w3-button" href="#!/">Home</a>
-    <a class="w3-bar-item w3-button w3-right" href="#!/auth/logout">Logout</a>
-    <a class="w3-bar-item w3-button w3-right" href="#!/objects/list">Objects</a>
+    <a class="w3-bar-item w3-button" ui-sref="root" ui-sref-active="active">Home</a>
+    <a class="w3-bar-item w3-button w3-right" ui-sref="logout" ui-sref-active="active">Logout</a>
+    <a class="w3-bar-item w3-button w3-right" ui-sref="objectsList" ui-sref-active="active">Objects</a>
     <header class="w3-display-middle">DUNGEONS EXPLORERS</header>
   </header>
 
-  <div ng-app="dungeons" class="h100p">
-    <div class="w3-display-container ng-view h100p"></div>
+  <div class="h100p">
+    <div class="w3-display-container h100p" ui-view></div>
   </div>
   <script type="text/javascript" src="dungeons.js"></script>
 </body>

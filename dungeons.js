@@ -1,6 +1,6 @@
-var data = {};
-// var app = angular.module('dungeons', ['uiValidate', 'ngRoute']);
-var app = angular.module('dungeons', ['ngRoute']);
+var data = {token:'', until:0};
+
+var app = angular.module('dungeons', ['ui.router']);
 
 app.directive('checkEmail', function() {
   var EMAIL_REGEXP = /^[\w!#$%&'*+/=?`{|}~^-]+(?:\.[\w!#$%&'*+/=?`{|}~^-]+)*@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}$/i;
@@ -24,28 +24,6 @@ app.directive('checkEmail', function() {
   };
 });
 
-app.config(function($routeProvider) {
-  $routeProvider
-  .when('/objects/list', {
-    templateUrl : 'views/objectList.html',
-    controller: 'objectList'
-
-  })
-  .when('/auth/signup', {
-    templateUrl : 'views/signup.html',
-    controller: 'signup'
-  })
-  .when('/auth/logout', {
-    templateUrl : 'views/logout.html',
-    controller: 'logout'
-  })
-  .otherwise({
-    templateUrl : 'views/signin.html',
-    controller: 'signin'
-  });
-});
-
-
 app.filter('capitalize', function() {
   return function(x) {
     if(x)
@@ -63,7 +41,8 @@ app.filter('ts2date', function() {
   };
 });
 
-app.controller('objectList', function($scope, $http) {
+
+app.controller('objectsList', function($scope, $http){
     $http.get('objects/list')
       .then(function(response) {
         $scope.until = response.data.until;
@@ -76,11 +55,50 @@ app.controller('objectList', function($scope, $http) {
       });
 });
 
+
+app.config(function($stateProvider){
+  var rootState = {
+    name: 'root',
+    url: '',
+    templateUrl: 'views/welcome.html',
+  }
+
+  var signinState = {
+    name: 'signin',
+    url: '/signin',
+    templateUrl: 'views/signin.html',
+  }
+
+  var logoutState = {
+    name: 'logout',
+    url: '/logout',
+    templateUrl: 'views/logout.html',
+  }
+
+  var signupState = {
+    name: 'signup',
+    url: '/signup',
+    templateUrl: 'views/signup.html'
+  }
+
+  var objectsState = {
+    name: 'objectsList',
+    url: '/objects',
+    templateUrl: 'views/objectsList.html',
+    controller:'objectsList'
+  }
+
+  $stateProvider.state(rootState);
+  $stateProvider.state(signinState);
+  $stateProvider.state(logoutState);
+  $stateProvider.state(signupState);
+  $stateProvider.state(objectsState);
+});
+
+
 app.controller('signin', function($scope, $http) {
   angular.element(document.getElementById("loginId")).focus();
-// });
 
-// app.controller('login', function($scope, $http) {
   $scope.submit = function (){
     $http.post('auth/login')
     .then(function(response) {
@@ -100,3 +118,15 @@ app.controller('signin', function($scope, $http) {
 app.controller('signup', function($scope, $http) {
   angular.element(document.getElementById("loginId")).focus();
 });
+
+
+
+app.run(
+  [
+    '$rootScope', '$state', '$stateParams',
+    function ($rootScope, $state, $stateParams){
+      $rootScope.$state = $state;
+      $rootScope.$stateParams = $stateParams;
+    }
+  ]
+);
