@@ -6,7 +6,7 @@ A character (Player Character (PC) or Non Player Character (NPC)) has as attribu
 - a `strength`
 
   his `strength` defines the transportable weight : `maxWeight = 5 * strength` and a physical damage modifier : `physicalDamageMod = floor((strength - 10) / 2)`
-  
+
   if the character is carrying more than he can, he suffers a penalty to his skills equal to `penalty = 5 * floor((weight - maxWeight) / 10)`
 - a `constitution`
 
@@ -61,29 +61,48 @@ In case of equality, the winner is the active character.
 - `dodge`
 - `magic`
 - `bargain`
-- `repair`
 
 **Maybe for the future**
+- `repair`
 - `craft`
 - `enchant`
 
 
 ## Items
 
- Code           | Name            | Type       | Family          | Details                                                                                                        | Droppable | Buyable | Script  
+ Code           | Name            | Type       | Family          | Details                                                                                                        | Droppable | Buyable | Script
 ----------------|-----------------|------------|-----------------|----------------------------------------------------------------------------------------------------------------|-----------|---------|--------
-`shortsword`    | Short Sword     | `weapon`   | `shortBlade`    | `{"atk":0, "damage":[1,6], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":1}`            | t         | t       | ""    
-`longsword`     | Long Sword      | `weapon`   | `longBlade`     | `{"atk":-5,"damage":[1,8], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
-`shortbow`      | Short Bow       | `weapon`   | `bow`           | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,12],"weight":1}`           | t         | t       | ""    
-`longbow`       | Long Bow        | `weapon`   | `bow`           | `{"atk":-5,"damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,20],"weight":1.5}`         | t         | t       | ""    
-`dagger`        | Dagger          | `weapon`   | `dagger`        | `{"atk":0, "damage":[1,4], "critical":8, "physicalrange":[0,1],"distancerange":[2,3],"weight":0.5}`            | t         | t       | ""    
-`lightflail`    | Light Flail     | `weapon`   | `flail`         | `{"atk":-5,"damage":[1,8], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
-`lightMace`     | Light Mace      | `weapon`   | `mace`          | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
-`lightHammer`   | Light Hammer    | `weapon`   | `hammer`        | `{"atk":0, "damage":[1,4], "critical":10,"physicalrange":[0,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""    
-`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow`      | `{"atk":0, "damage":[1,8], "critical":8, "physicalrange":[-1,-1],"distancerange":[16,16],"weight":1.5}`        | t         | t       | ""    
-`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`           | `{"atk":0, "damage":[1,6], "critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1.5}`          | t         | t       | ""    
-`halberd`       | Halberd         | `weapon`   | `hast`          | `{"atk":-5,"damage":[1,10],"critical":10,"physicalrange":[1,2],"distancerange":[-1,-1],"weight":6}`            | t         | t       | ""    
+`shortsword`    | Short Sword     | `weapon`   | `shortBlade`    | `{"atk":0, "damage":[1,6], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":1}`            | t         | t       | ""
+`longsword`     | Long Sword      | `weapon`   | `longBlade`     | `{"atk":-5,"damage":[1,8], "critical":8, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`shortbow`      | Short Bow       | `weapon`   | `bow`           | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,12],"weight":1}`           | t         | t       | ""
+`longbow`       | Long Bow        | `weapon`   | `bow`           | `{"atk":-5,"damage":[1,6], "critical":5, "physicalrange":[-1,-1],"distancerange":[2,20],"weight":1.5}`         | t         | t       | ""
+`dagger`        | Dagger          | `weapon`   | `dagger`        | `{"atk":0, "damage":[1,4], "critical":8, "physicalrange":[0,1],"distancerange":[2,3],"weight":0.5}`            | t         | t       | ""
+`lightflail`    | Light Flail     | `weapon`   | `flail`         | `{"atk":-5,"damage":[1,8], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`lightMace`     | Light Mace      | `weapon`   | `mace`          | `{"atk":0, "damage":[1,6], "critical":5, "physicalrange":[1,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`lightHammer`   | Light Hammer    | `weapon`   | `hammer`        | `{"atk":0, "damage":[1,4], "critical":10,"physicalrange":[0,1],"distancerange":[-1,-1],"weight":2}`            | t         | t       | ""
+`lightcrossbow` | Light Crossbow  | `weapon`   | `crossbow`      | `{"atk":0, "damage":[1,8], "critical":8, "physicalrange":[-1,-1],"distancerange":[16,16],"weight":1.5}`        | t         | t       | ""
+`boardingaxe`   | Boarding Axe    | `weapon`   | `axe`           | `{"atk":0, "damage":[1,6], "critical":10,"physicalrange":[1,1],"distancerange":[-1,-1],"weight":1.5}`          | t         | t       | ""
+`halberd`       | Halberd         | `weapon`   | `hast`          | `{"atk":-5,"damage":[1,10],"critical":10,"physicalrange":[1,2],"distancerange":[-1,-1],"weight":6}`            | t         | t       | ""
 
-## Merchants
+## Non Player Characters (NPC)
 
-The merchants has a charisma, some gold pieces, some equipments and only one skill : bargain.
+### Merchants
+The merchants has a charisma, some gold pieces, some equipments (any type) and only one skill : `bargain`.
+there are specialized merchants :
+
+#### Blacksmiths
+The blacksmiths sells only weapons and armors.
+
+#### Alchemists
+The alchemists has more potions and some scrolls.
+
+#### Wizards
+The wizards has more scrolls and some potions.
+
+### Trainers
+
+#### Wizards
+The wizards can teach `magic` and some spells.
+
+#### Weapon masters
+The Weapon masters can teach any weapon skill, `closeCombat` skill or `dodge` skill.
